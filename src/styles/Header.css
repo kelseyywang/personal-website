@@ -1,12 +1,7 @@
-body {
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.Header {
+.Row {
+  height: 100%;
+  margin-left: 30px;
+  margin-right: 150px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -18,15 +13,14 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-left: 50vw;
 }
 
 .Link {
-  margin-left: 20px;
+  margin-left: 40px;
 }
 
 .AppLogo {
-  height: 50px;
+  height: 60px;
   pointer-events: none;
 }
 
