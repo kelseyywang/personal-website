@@ -3,33 +3,31 @@
   width: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-end;
   text-align: left;
   font-size: 20px;
 }
 
 .TextBox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   max-width: 50%; 
-  margin-left: 40%;
-  margin-bottom: 40%;
+  margin-top: 7%;
 }
 
 .Right {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   height: 100%;
   width: 50%;
+  margin-right: 10%;
 }
 
 .PictureContainer {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 5%;
   max-width: 60%; 
   /* QUESTION: How come if i change ^ to max-height, the vertical scroll appears? */
 }
