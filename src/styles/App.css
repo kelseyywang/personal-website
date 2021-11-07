@@ -20,7 +20,7 @@
   /* QUESTION: How come this still shrinks when you shrink the page height? */
 }
 
-.Home {
+.Content {
   flex-grow: 1;
   /* height: 100%; */
   /* QUESTION: How come when you add height: 100% above the picture will stab into the header when height shrinks? */

@@ -15,7 +15,7 @@ function Right() {
   return (
     <div className="Right">
       <div className="PictureContainer">
-        <img src={picture} className="Picture" />
+        <img src={picture} className="Picture" alt="kelsey headshot" />
       </div>
     </div>
   );
