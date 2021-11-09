@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../images/kyw_logo.png";
 import linkHoverIcon1 from "../images/blob1.png";
 import linkHoverIcon2 from "../images/blob2.png";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/Header.css";
 
 function Header() {
@@ -10,6 +10,18 @@ function Header() {
     about: false,
     contact: false,
   });
+
+  const location = useLocation();
+  const pathName = location.pathname;
+  const aboutPage = pathName.includes("/about");
+  const contactPage = pathName.includes("/contact");
+
+  useEffect(() => {
+    setHoverStatus({
+      about: aboutPage,
+      contact: contactPage,
+    });
+  }, [pathName, aboutPage, contactPage]);
 
   return (
     <div className="Row">
@@ -25,7 +37,7 @@ function Header() {
             className="Link"
             onMouseEnter={() => setHoverStatus({ ...hoverStatus, about: true })}
             onMouseLeave={() =>
-              setHoverStatus({ ...hoverStatus, about: false })
+              setHoverStatus({ ...hoverStatus, about: aboutPage || false })
             }
           >
             <div className="LinkText">about</div>
@@ -45,7 +57,7 @@ function Header() {
               setHoverStatus({ ...hoverStatus, contact: true })
             }
             onMouseLeave={() =>
-              setHoverStatus({ ...hoverStatus, contact: false })
+              setHoverStatus({ ...hoverStatus, contact: contactPage || false })
             }
           >
             <div className="LinkText">contact</div>

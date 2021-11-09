@@ -5,17 +5,17 @@ import { INTRO } from "./content";
 
 function Left() {
   return (
-    <div className="Left">
-      <div className="TextBox">{INTRO}</div>
+    <div className="HomeLeft">
+      <div className="HomeTextBox">{INTRO}</div>
     </div>
   );
 }
 
 function Right() {
   return (
-    <div className="Right">
-      <div className="PictureContainer">
-        <img src={picture} className="Picture" alt="kelsey headshot" />
+    <div className="HomeRight">
+      <div className="HomePictureContainer">
+        <img src={picture} className="HomePicture" alt="kelsey headshot" />
       </div>
     </div>
   );

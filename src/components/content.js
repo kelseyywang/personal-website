@@ -1,1 +1,6 @@
 export const INTRO = "hi! i’m kelsey. i’m a software engineer in the bay area. \n\nnice to meet you! 👋";
+// TODO: replace these placeholders
+export const ABOUT_PRESENT = `These are my present-day shenanigans. I will probably write about my job and hobbies. \n\nThese are my present-day shenanigans. I will probably write about my job and hobbies. These are my present-day shenanigans. I will probably write about my job and hobbies.`;
+export const ABOUT_PAST = `This is my past, it's pretty dark. \n\nThis is my past, it's pretty dark. This is my past, it's pretty dark.This is my past, it's pretty dark. This is my past, it's pretty dark.`;
+export const ABOUT_PROJ1 = `This is a blurb about a past project. This is a blurb about a past project. This is a blurb about a past project. This is a blurb about a past project. This is a blurb about a past project. \n\nThis is a blurb about a past project. This is a blurb about a past project. This is a blurb about a past project. `
+export const ABOUT_FUTURE = `These are my future plans. This panel is probably just a joke.`;
