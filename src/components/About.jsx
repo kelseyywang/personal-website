@@ -1,86 +1,234 @@
 import "../styles/About.css";
 import { present, past, future, proj1 } from "./AboutContent";
-import downArrow from "../images/down_arrow.png";
-import { useCallback, useEffect, useState } from "react";
+import arrowImage from "../images/down_arrow.png";
+import { useEffect, useRef, useState } from "react";
 import classNames from "classnames";
 
-const pages = [[present], [past, proj1], [future]];
+const PAGES = [[present], [past, proj1], [future]];
 
 function About() {
   // Primary index is the vertical index (up/down) and secondary is horizontal index (left/right)
   const [pageIndex, setPageIndex] = useState({ primary: 0, secondary: 0 });
-  const [lastPageIndex, setLastPageIndex] = useState({
-    primary: 0,
-    secondary: 0,
-  });
   const [isAnimating, setIsAnimating] = useState(false);
   const [animatingTimeout, setAnimatingTimeout] = useState();
   const [pageChangeType, setPageChangeType] = useState("none");
+  const { primary, secondary } = pageIndex;
 
-  const handleArrowPress = useCallback(
-    (event) => {
-      const { primary, secondary } = pageIndex;
-      // Change page index upon arrow keys pressed (if there are more pages in specified direction)
-      setLastPageIndex(pageIndex);
-      if (event.key === "ArrowUp" && primary > 0) {
-        // We will reset secondary index to 0 anytime the primary index changes
-        setPageIndex({ primary: pageIndex.primary - 1, secondary: 0 });
-        setPageChangeType("up");
-      } else if (event.key === "ArrowDown" && primary < pages.length - 1) {
-        setPageIndex({ primary: pageIndex.primary + 1, secondary: 0 });
-        setPageChangeType("down");
-      } else if (event.key === "ArrowLeft" && secondary > 0) {
-        setPageIndex({
-          primary: primary,
-          secondary: pageIndex.secondary - 1,
-        });
-        setPageChangeType("left");
-      } else if (
-        event.key === "ArrowRight" &&
-        secondary < pages[primary].length - 1
-      ) {
-        setPageIndex({
-          primary: primary,
-          secondary: pageIndex.secondary + 1,
-        });
-        setPageChangeType("right");
-      } else {
-        setPageChangeType("none");
+  const dontChange = useRef(false);
+  const lastPageIndex = useRef({
+    primary: 0,
+    secondary: 0,
+  });
+
+  const isLastPageUp = primary <= 0;
+  const isLastPageDown = primary >= PAGES.length - 1;
+  const isLastPageLeft = secondary <= 0;
+  const isLastPageRight = secondary >= PAGES[primary].length - 1;
+  const containerRef = useRef();
+
+  const triggerScrollActionIfPossible = (direction) => {
+    if (direction === "up" && !isLastPageUp) {
+      // We will reset secondary index to 0 anytime the primary index changes
+      setPageIndex({ primary: primary - 1, secondary: 0 });
+      setPageChangeType("up");
+    } else if (direction === "down" && !isLastPageDown) {
+      setPageIndex({ primary: primary + 1, secondary: 0 });
+      setPageChangeType("down");
+    } else if (direction === "left" && !isLastPageLeft) {
+      setPageIndex({
+        primary: primary,
+        secondary: secondary - 1,
+      });
+      setPageChangeType("left");
+    } else if (direction === "right" && !isLastPageRight) {
+      setPageIndex({
+        primary: primary,
+        secondary: secondary + 1,
+      });
+      setPageChangeType("right");
+    } else {
+      // Reset to a non-animating state value
+      setPageChangeType("none");
+      return;
+    }
+    setIsAnimating(true);
+    clearTimeout(animatingTimeout);
+    const timeout = setTimeout(() => {
+      setIsAnimating(false);
+    }, 500);
+    setAnimatingTimeout(timeout);
+  };
+
+  const createTouchListener = (element) => {
+    // For mobile touch scroll events
+    let start = { x: 0, y: 0 };
+    let current = { x: 0, y: 0 };
+    const onTouchStart = (event) => {
+      start = { x: event.touches[0].clientX, y: event.touches[0].clientY };
+      current = { x: event.touches[0].clientX, y: event.touches[0].clientY };
+    };
+
+    const onTouchMove = (event) => {
+      current = { x: event.touches[0].clientX, y: event.touches[0].clientY };
+    };
+
+    const onTouchEnd = () => {
+      lastPageIndex.current = pageIndex;
+      if (current.x === start.x && current.y === start.y) {
         return;
       }
-      setIsAnimating(true);
-      clearTimeout(animatingTimeout);
-      const timeout = setTimeout(() => {
-        setIsAnimating(false);
-      }, 500);
-      setAnimatingTimeout(timeout);
-    },
-    [pageIndex]
-  );
+      if (Math.abs(current.y - start.y) > Math.abs(current.x - start.x)) {
+        // Vertical scroll
+        if (current.y > start.y) {
+          triggerScrollActionIfPossible("up");
+        } else {
+          triggerScrollActionIfPossible("down");
+        }
+      } else {
+        // Horizontal scroll
+        if (current.x > start.x) {
+          triggerScrollActionIfPossible("left");
+        } else {
+          triggerScrollActionIfPossible("right");
+        }
+      }
+    };
+    element.addEventListener("touchstart", onTouchStart);
+    element.addEventListener("touchmove", onTouchMove);
+    element.addEventListener("touchend", onTouchEnd);
+
+    return () => {
+      element.removeEventListener("touchstart", onTouchStart);
+      element.removeEventListener("touchmove", onTouchMove);
+      element.removeEventListener("touchend", onTouchEnd);
+    };
+  };
+
+  const createWheelListener = (element) => {
+    // For mouse scroll events
+    let wheelScrollingTimeout = null;
+    let wheelScrolling = false;
+    const onWheel = (event) => {
+      if (wheelScrollingTimeout) {
+        clearTimeout(wheelScrollingTimeout);
+      }
+      if (!wheelScrolling) {
+        lastPageIndex.current = pageIndex;
+        if (
+          !dontChange.current &&
+          (Math.abs(event.deltaY) > 0 || Math.abs(event.deltaX) > 0)
+        ) {
+          if (Math.abs(event.deltaY) > Math.abs(event.deltaX)) {
+            // Vertical scroll
+            if (event.deltaY > 0) {
+              triggerScrollActionIfPossible("down");
+            } else {
+              triggerScrollActionIfPossible("up");
+            }
+          } else {
+            // Horizontal scroll
+            if (event.deltaX > 0) {
+              triggerScrollActionIfPossible("right");
+            } else {
+              triggerScrollActionIfPossible("left");
+            }
+          }
+          dontChange.current = true;
+          setTimeout(() => {
+            dontChange.current = false;
+          }, 1000);
+        }
+        wheelScrolling = true;
+      }
+      wheelScrollingTimeout = setTimeout(() => {
+        wheelScrolling = false;
+      }, 50);
+    };
+    element.addEventListener("wheel", onWheel);
+
+    return () => {
+      if (wheelScrollingTimeout) {
+        clearTimeout(wheelScrollingTimeout);
+      }
+      element.removeEventListener("wheel", onWheel);
+    };
+  };
+
+  const createArrowPressListener = () => {
+    // For keyboard arrow presses
+    const handleArrowPress = (event) => {
+      lastPageIndex.current = pageIndex;
+      if (event.key === "ArrowUp") {
+        triggerScrollActionIfPossible("up");
+      } else if (event.key === "ArrowDown") {
+        triggerScrollActionIfPossible("down");
+      } else if (event.key === "ArrowLeft") {
+        triggerScrollActionIfPossible("left");
+      } else if (event.key === "ArrowRight") {
+        triggerScrollActionIfPossible("right");
+      }
+    };
+
+    document.addEventListener("keydown", handleArrowPress);
+    return () => {
+      document.removeEventListener("keydown", handleArrowPress);
+    };
+  };
 
   useEffect(() => {
-    document.addEventListener("keydown", handleArrowPress, false);
+    if (!containerRef.current) {
+      return;
+    }
+    const destroyTouchListener = createTouchListener(containerRef.current);
+    const destroyWheelListener = createWheelListener(containerRef.current);
+    const destroyArrowPressListener = createArrowPressListener();
 
-    // Clean up event listener upon leaving page
     return () => {
-      document.removeEventListener("keydown", handleArrowPress, false);
+      destroyTouchListener();
+      destroyWheelListener();
+      destroyArrowPressListener();
     };
-  }, [handleArrowPress]);
+  }, [pageIndex]);
 
-  const currentPage = pages[pageIndex.primary][pageIndex.secondary];
-  const lastPage = pages[lastPageIndex.primary][lastPageIndex.secondary];
+  useEffect(() => {}, [pageIndex.primary]);
 
-  // TODO: remove down arrow if last page, add left/right arrows
-  // TODO: trigger move page upon arrow press in addition to keyboard presses
+  const currentPage = PAGES[primary][secondary];
+  const lastPage =
+    PAGES[lastPageIndex.current.primary][lastPageIndex.current.secondary];
+  // TODO: trigger scroll upon user click on arrows
   return (
-    <div className="AboutLayout">
+    <div className="AboutLayout" ref={containerRef}>
       <div
         className={classNames({
-          AboutArrowSectionTop: pageIndex.primary > 0,
-          HiddenArrow: !(pageIndex.primary > 0),
+          AboutArrowSectionTop: !isLastPageUp,
+          HiddenArrow: isLastPageUp,
         })}
       >
-        <img src={downArrow} className="DownArrow" alt="down arrow" />
+        <img src={arrowImage} className="UpArrow" alt="up arrow" />
+      </div>
+      <div
+        className={classNames({
+          AboutArrowSectionBottom: !isLastPageDown,
+          HiddenArrow: isLastPageDown,
+        })}
+      >
+        <img src={arrowImage} className="DownArrow" alt="down arrow" />
+      </div>
+      <div
+        className={classNames({
+          AboutArrowSectionLeft: !isLastPageLeft,
+          HiddenArrow: isLastPageLeft,
+        })}
+      >
+        <img src={arrowImage} className="LeftArrow" alt="left arrow" />
+      </div>
+      <div
+        className={classNames({
+          AboutArrowSectionRight: !isLastPageRight,
+          HiddenArrow: isLastPageRight,
+        })}
+      >
+        <img src={arrowImage} className="RightArrow" alt="right arrow" />
       </div>
       <div
         className={classNames("AboutDoublePanel AboutDoublePanel--last", {
@@ -102,14 +250,6 @@ function About() {
         })}
       >
         {currentPage}
-      </div>
-      <div
-        className={classNames({
-          AboutArrowSectionBottom: pageIndex.primary < pages.length - 1,
-          HiddenArrow: !(pageIndex.primary < pages.length - 1),
-        })}
-      >
-        <img src={downArrow} className="DownArrow" alt="down arrow" />
       </div>
     </div>
   );
