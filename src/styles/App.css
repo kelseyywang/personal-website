@@ -18,13 +18,16 @@
 .Header {
   width: 100%;
   height: 100px;
-  /* QUESTION: How come this still shrinks when you shrink the page height? */
 }
 
 .Content {
   flex-grow: 1;
-  /* height: 100%; */
-  /* QUESTION: How come when you add height: 100% above the picture will stab into the header when height shrinks? */
   width: 100%; 
   margin-bottom: 50px;
+}
+
+@media screen and (max-width: 500px) {
+  .Content {
+    margin-bottom: 20px;
+  }
 }

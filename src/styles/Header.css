@@ -33,25 +33,36 @@
   z-index: 2;
 }
 
+.LinkTextBig {
+  transform: scale(1.07, 1.07);  
+  transition: .1s;
+}
+
+.Logo:hover {
+  transform: scale(1.05, 1.05);
+  transition: .1s;
+}
+
 .LinkHoverIcon1 {
+  position: absolute;
   top: 0px;
   left: -7px;
   height: 18px;
   z-index: 1;
-  position: absolute;
 }
 
 .LinkHoverIcon2 {
-  top: 2px;
-  left: -8px;
-  height: 19px;
-  z-index: 1;
   position: absolute;
+  top: 1px;
+  left: -4px;
+  height: 20px;
+  z-index: 1;
 }
 
 .AppLogo {
   height: 60px;
   pointer-events: none;
+  z-index: 3;
 }
 
 .HeaderLink {
@@ -64,7 +75,7 @@
 	animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
-	animation-duration: .3s;
+	animation-duration: .1s;
 }
 
 @keyframes fadeInOpacity {
@@ -74,4 +85,18 @@
 	100% {
 		opacity: 1;
 	}
+}
+
+@media screen and (max-width: 500px) {
+  .AppLogo {
+    margin-left: 10px;
+  }
+
+  .LinkTextBig {
+    transform: none;
+  }
+  
+  .Logo:hover {
+    transform: none;
+  }
 }

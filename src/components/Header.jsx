@@ -1,9 +1,10 @@
 import { Link, useLocation } from "react-router-dom";
 import logo from "../images/kyw_logo.png";
-import linkHoverIcon1 from "../images/blob1.png";
-import linkHoverIcon2 from "../images/blob2.png";
+import linkHoverIcon1 from "../images/greenblob.png";
+import linkHoverIcon2 from "../images/blueblob.png";
 import React, { useEffect, useState } from "react";
 import "../styles/Header.css";
+import classNames from "classnames";
 
 function Header() {
   const [hoverStatus, setHoverStatus] = useState({
@@ -40,7 +41,14 @@ function Header() {
               setHoverStatus({ ...hoverStatus, about: aboutPage || false })
             }
           >
-            <div className="LinkText">about</div>
+            <div
+              className={classNames({
+                LinkText: true,
+                LinkTextBig: hoverStatus.about,
+              })}
+            >
+              about
+            </div>
             {hoverStatus.about && (
               <img
                 src={linkHoverIcon1}
@@ -60,7 +68,14 @@ function Header() {
               setHoverStatus({ ...hoverStatus, contact: contactPage || false })
             }
           >
-            <div className="LinkText">contact</div>
+            <div
+              className={classNames({
+                LinkText: true,
+                LinkTextBig: hoverStatus.contact,
+              })}
+            >
+              contact
+            </div>
             {hoverStatus.contact && (
               <img
                 src={linkHoverIcon2}

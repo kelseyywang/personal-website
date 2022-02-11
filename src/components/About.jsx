@@ -1,3 +1,4 @@
+// Whoever thought that implementing a stupid little carousel from scratch was a good idea? Me, apparently. 🤔
 import "../styles/About.css";
 import { present, past, future, proj1 } from "./AboutContent";
 import arrowImage from "../images/down_arrow.png";
@@ -27,6 +28,7 @@ function About() {
   const containerRef = useRef();
 
   const triggerScrollActionIfPossible = (direction) => {
+    lastPageIndex.current = pageIndex;
     if (direction === "up" && !isLastPageUp) {
       // We will reset secondary index to 0 anytime the primary index changes
       setPageIndex({ primary: primary - 1, secondary: 0 });
@@ -73,7 +75,6 @@ function About() {
     };
 
     const onTouchEnd = () => {
-      lastPageIndex.current = pageIndex;
       if (current.x === start.x && current.y === start.y) {
         return;
       }
@@ -113,7 +114,6 @@ function About() {
         clearTimeout(wheelScrollingTimeout);
       }
       if (!wheelScrolling) {
-        lastPageIndex.current = pageIndex;
         if (
           !dontChange.current &&
           (Math.abs(event.deltaY) > 0 || Math.abs(event.deltaX) > 0)
@@ -157,7 +157,6 @@ function About() {
   const createArrowPressListener = () => {
     // For keyboard arrow presses
     const handleArrowPress = (event) => {
-      lastPageIndex.current = pageIndex;
       if (event.key === "ArrowUp") {
         triggerScrollActionIfPossible("up");
       } else if (event.key === "ArrowDown") {
@@ -195,7 +194,6 @@ function About() {
   const currentPage = PAGES[primary][secondary];
   const lastPage =
     PAGES[lastPageIndex.current.primary][lastPageIndex.current.secondary];
-  // TODO: trigger scroll upon user click on arrows
   return (
     <div className="AboutLayout" ref={containerRef}>
       <div
@@ -204,7 +202,12 @@ function About() {
           HiddenArrow: isLastPageUp,
         })}
       >
-        <img src={arrowImage} className="UpArrow" alt="up arrow" />
+        <img
+          src={arrowImage}
+          className="UpArrow"
+          alt="up arrow"
+          onClick={() => triggerScrollActionIfPossible("up")}
+        />
       </div>
       <div
         className={classNames({
@@ -212,7 +215,14 @@ function About() {
           HiddenArrow: isLastPageDown,
         })}
       >
-        <img src={arrowImage} className="DownArrow" alt="down arrow" />
+        <img
+          src={arrowImage}
+          className="DownArrow"
+          alt="down arrow"
+          onClick={() => {
+            triggerScrollActionIfPossible("down");
+          }}
+        />
       </div>
       <div
         className={classNames({
@@ -220,7 +230,14 @@ function About() {
           HiddenArrow: isLastPageLeft,
         })}
       >
-        <img src={arrowImage} className="LeftArrow" alt="left arrow" />
+        <img
+          src={arrowImage}
+          className="LeftArrow"
+          alt="left arrow"
+          onClick={() => {
+            triggerScrollActionIfPossible("left");
+          }}
+        />
       </div>
       <div
         className={classNames({
@@ -228,7 +245,14 @@ function About() {
           HiddenArrow: isLastPageRight,
         })}
       >
-        <img src={arrowImage} className="RightArrow" alt="right arrow" />
+        <img
+          src={arrowImage}
+          className="RightArrow"
+          alt="right arrow"
+          onClick={() => {
+            triggerScrollActionIfPossible("right");
+          }}
+        />
       </div>
       <div
         className={classNames("AboutDoublePanel AboutDoublePanel--last", {

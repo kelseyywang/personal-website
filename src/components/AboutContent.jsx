@@ -8,13 +8,13 @@ import {
 import DoublePanel from "./DoublePanel";
 
 const headerText = (text) => (
-  <div className="AboutLeft">
+  <div className="AboutHeader">
     <div className="AboutHeaderText">{text}</div>
   </div>
 );
 
 const contentText = (text) => (
-  <div className="AboutRight">
+  <div className="AboutContent">
     <div className="AboutContentText">{text}</div>
   </div>
 );
