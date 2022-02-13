@@ -37,7 +37,6 @@ function About() {
 
   const triggerScrollActionIfPossible = (direction) => {
     lastPageIndex.current = pageIndex;
-    console.log("set last to", pageIndex);
     if (direction === "up" && !isLastPageUp) {
       // We will reset secondary index to 0 anytime the primary index changes
       setPageIndex({ primary: primary - 1, secondary: 0 });
