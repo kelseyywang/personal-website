@@ -17,6 +17,7 @@
   justify-content: center;
   align-items: center;
   text-align: left;
+  margin-bottom: 5%;
 }
 
 .ContactHeader {
@@ -25,6 +26,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 5%;
 }
 
 .ContactHeaderText {
