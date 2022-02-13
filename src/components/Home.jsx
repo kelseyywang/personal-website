@@ -1,7 +1,7 @@
 import "../styles/Home.css";
 import picture from "../images/kyw_watercolor.png";
 import DoublePanel from "./DoublePanel";
-import { INTRO } from "./content";
+import { INTRO } from "./content.jsx";
 
 function Left() {
   return (

@@ -45,17 +45,17 @@
 
 .LinkHoverIcon1 {
   position: absolute;
-  top: 0px;
-  left: -7px;
-  height: 18px;
+  top: -5px;
+  left: -17px;
+  height: 29px;
   z-index: 1;
 }
 
 .LinkHoverIcon2 {
   position: absolute;
-  top: 1px;
-  left: -4px;
-  height: 20px;
+  top: -3px;
+  left: -14px;
+  height: 29px;
   z-index: 1;
 }
 
@@ -87,7 +87,7 @@
 	}
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .AppLogo {
     margin-left: 10px;
   }

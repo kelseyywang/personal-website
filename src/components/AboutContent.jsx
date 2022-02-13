@@ -3,8 +3,11 @@ import {
   ABOUT_FUTURE,
   ABOUT_PAST,
   ABOUT_PRESENT,
-  ABOUT_PROJ1,
-} from "./content";
+  ABOUT_FTF,
+  ABOUT_HACKATHONS,
+  ABOUT_TEC,
+  ABOUT_OTHER,
+} from "./content.jsx";
 import DoublePanel from "./DoublePanel";
 
 const headerText = (text) => (
@@ -32,8 +35,29 @@ export const past = (
 
 export const proj1 = (
   <DoublePanel
-    panel1={headerText("project 1:")}
-    panel2={contentText(ABOUT_PROJ1)}
+    panel1={headerText("frame the future:")}
+    panel2={contentText(ABOUT_FTF)}
+  />
+);
+
+export const proj2 = (
+  <DoublePanel
+    panel1={headerText("hackathons:")}
+    panel2={contentText(ABOUT_HACKATHONS)}
+  />
+);
+
+export const proj3 = (
+  <DoublePanel
+    panel1={headerText("teens exploring code:")}
+    panel2={contentText(ABOUT_TEC)}
+  />
+);
+
+export const proj4 = (
+  <DoublePanel
+    panel1={headerText("other:")}
+    panel2={contentText(ABOUT_OTHER)}
   />
 );
 

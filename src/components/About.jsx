@@ -1,11 +1,19 @@
 // Whoever thought that implementing a stupid little carousel from scratch was a good idea? Me, apparently. 🤔
 import "../styles/About.css";
-import { present, past, future, proj1 } from "./AboutContent";
+import {
+  present,
+  past,
+  future,
+  proj1,
+  proj2,
+  proj3,
+  proj4,
+} from "./AboutContent";
 import arrowImage from "../images/down_arrow.png";
 import { useEffect, useRef, useState } from "react";
 import classNames from "classnames";
 
-const PAGES = [[present], [past, proj1], [future]];
+const PAGES = [[present], [past, proj1, proj2, proj3, proj4], [future]];
 
 function About() {
   // Primary index is the vertical index (up/down) and secondary is horizontal index (left/right)
@@ -29,6 +37,7 @@ function About() {
 
   const triggerScrollActionIfPossible = (direction) => {
     lastPageIndex.current = pageIndex;
+    console.log("set last to", pageIndex);
     if (direction === "up" && !isLastPageUp) {
       // We will reset secondary index to 0 anytime the primary index changes
       setPageIndex({ primary: primary - 1, secondary: 0 });
