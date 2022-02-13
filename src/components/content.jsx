@@ -8,6 +8,7 @@ export const ABOUT_PRESENT = (
       href="https://www.parafin.com/"
       className="AboutContentLink"
       target="_blank"
+      rel="noreferrer"
     >
       Parafin
     </a>
@@ -22,6 +23,7 @@ export const ABOUT_PAST = (
       href="https://www.akasa.com/"
       className="AboutContentLink"
       target="_blank"
+      rel="noreferrer"
     >
       AKASA
     </a>
@@ -37,6 +39,7 @@ export const ABOUT_FTF = (
       href="https://www.youtube.com/channel/UCw1Cp6PllBTAUGbLm1lk2FA"
       className="AboutContentLink"
       target="_blank"
+      rel="noreferrer"
     >
       video series
     </a>
@@ -51,6 +54,7 @@ export const ABOUT_HACKATHONS = (
       href="https://devpost.com/kelseyywang"
       className="AboutContentLink"
       target="_blank"
+      rel="noreferrer"
     >
       here
     </a>
@@ -65,6 +69,7 @@ export const ABOUT_TEC = (
       href="https://www.facebook.com/teensexploringcode/"
       className="AboutContentLink"
       target="_blank"
+      rel="noreferrer"
     >
       Teens Exploring Code (TEC)
     </a>
@@ -79,6 +84,7 @@ export const ABOUT_OTHER = (
       href="https://themakermode.com/"
       className="AboutContentLink"
       target="_blank"
+      rel="noreferrer"
     >
       The Maker Mode
     </a>
@@ -87,6 +93,7 @@ export const ABOUT_OTHER = (
       href="https://www.youtube.com/watch?v=6cpdgtT3bfM"
       className="AboutContentLink"
       target="_blank"
+      rel="noreferrer"
     >
       PillPal
     </a>
@@ -95,6 +102,7 @@ export const ABOUT_OTHER = (
       href="https://github.com/kelseyywang/heis_v1"
       className="AboutContentLink"
       target="_blank"
+      rel="noreferrer"
     >
       heis
     </a>
@@ -103,6 +111,7 @@ export const ABOUT_OTHER = (
       href="https://www.youtube.com/watch?v=Ow-PV4i-x7A"
       className="AboutContentLink"
       target="_blank"
+      rel="noreferrer"
     >
       tag-like game
     </a>

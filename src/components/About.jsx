@@ -196,7 +196,12 @@ function About() {
       destroyWheelListener();
       destroyArrowPressListener();
     };
-  }, [pageIndex]);
+  }, [
+    pageIndex,
+    createArrowPressListener,
+    createTouchListener,
+    createWheelListener,
+  ]);
 
   useEffect(() => {}, [pageIndex.primary]);
 

@@ -1,7 +1,7 @@
 import "../styles/About.css";
 import "../styles/Header.css";
 import "../styles/Contact.css";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import linkHoverIcon3 from "../images/purpleblob.png";
 import DoublePanel from "./DoublePanel";
 
@@ -33,6 +33,7 @@ function Right() {
         className="ContactLink"
         {...makeMouseHoverProps("linkedin")}
         target="_blank"
+        rel="noreferrer"
       >
         linkedin
         {hoverStatus.linkedin && (
@@ -44,6 +45,7 @@ function Right() {
         className="ContactLink"
         {...makeMouseHoverProps("github")}
         target="_blank"
+        rel="noreferrer"
       >
         github
         {hoverStatus.github && (
@@ -59,6 +61,7 @@ function Right() {
         className="ContactLink"
         {...makeMouseHoverProps("medium")}
         target="_blank"
+        rel="noreferrer"
       >
         medium
         {hoverStatus.medium && (
@@ -70,6 +73,7 @@ function Right() {
         className="ContactLink"
         {...makeMouseHoverProps("contact")}
         target="_blank"
+        rel="noreferrer"
       >
         contact
         {hoverStatus.contact && (
