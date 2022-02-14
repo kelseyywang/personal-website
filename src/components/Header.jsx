@@ -33,8 +33,9 @@ function Header() {
       </Link>
 
       <div className="LinkSection">
-        <Link to="/about" className="HeaderLink">
-          <div
+        <div className="HeaderLink">
+          <Link
+            to="/about"
             className="Link"
             onMouseEnter={() => setHoverStatus({ ...hoverStatus, about: true })}
             onMouseLeave={() =>
@@ -56,10 +57,11 @@ function Header() {
                 alt=""
               />
             )}
-          </div>
-        </Link>
-        <Link to="/contact" className="HeaderLink">
-          <div
+          </Link>
+        </div>
+        <div className="HeaderLink">
+          <Link
+            to="/contact"
             className="Link"
             onMouseEnter={() =>
               setHoverStatus({ ...hoverStatus, contact: true })
@@ -83,8 +85,8 @@ function Header() {
                 alt=""
               />
             )}
-          </div>
-        </Link>
+          </Link>
+        </div>
       </div>
     </div>
   );

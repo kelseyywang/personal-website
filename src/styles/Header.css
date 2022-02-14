@@ -16,8 +16,10 @@
 }
 
 .Link {
+  color: #1C1C1C;
   display: block;
   position: relative;
+  text-decoration: none;
   font-size: 16px;
 }
 
@@ -61,7 +63,6 @@
 
 .AppLogo {
   height: 60px;
-  pointer-events: none;
   z-index: 3;
 }
 
@@ -89,7 +90,7 @@
 
 @media screen and (max-width: 600px) {
   .AppLogo {
-    margin-left: 10px;
+    margin: 10px;
   }
 
   .LinkTextBig {

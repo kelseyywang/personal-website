@@ -27,8 +27,7 @@ export const ABOUT_PAST = (
     >
       AKASA
     </a>
-    {`, building systems to automate the messy financial side of healthcare.\n\nBefore that, I got my B.S. in Mathematical + Computational Science and a minor in Creative Writing from Stanford. I also worked on some fun projects ➡️.\n\nBefore that, I watched an unhealthy amount of Dance Moms.
-`}
+    {`, building systems to automate the messy financial side of healthcare.\n\nBefore that, I got my B.S. in Mathematical + Computational Science and a minor in Creative Writing from Stanford. I also worked on some fun projects ➡️.`}
   </div>
 );
 
@@ -88,7 +87,7 @@ export const ABOUT_OTHER = (
     >
       The Maker Mode
     </a>
-    {`, a blog site built in pure JS\n - `}
+    {`, an educational blog site built in pure JS\n - `}
     <a
       href="https://www.youtube.com/watch?v=6cpdgtT3bfM"
       className="AboutContentLink"
