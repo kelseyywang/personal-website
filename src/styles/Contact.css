@@ -105,4 +105,12 @@
   .ContactLink:hover {
     transform: none;
   }
+
+  .LinkHoverIcon3 {
+    display: none;
+  }
+  
+  .LinkHoverIcon3Small {
+    display: none;
+  }
 }
