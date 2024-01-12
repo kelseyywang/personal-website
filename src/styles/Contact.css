@@ -30,7 +30,7 @@
 }
 
 .ContactHeaderText {
-  font-family: 'Miniver', sans-serif;
+  font-family: "Miniver", sans-serif;
   font-size: 40px;
   text-align: center;
   margin-left: 100px;
@@ -38,16 +38,11 @@
 
 .ContactLink {
   text-decoration: underline;
-  color: #1C1C1C;
+  color: #1c1c1c;
   margin-top: 20px;
   margin-bottom: 20px;
   position: relative;
   z-index: 3;
-}
-
-.ContactLink:hover {
-  transform: scale(1.05, 1.05);
-  transition: .1s;
 }
 
 .LinkHoverIcon3 {
@@ -75,7 +70,7 @@
     align-items: center;
     margin: 0px;
   }
-  
+
   .ContactHeaderText {
     font-size: 30px;
     margin-left: 0px;
@@ -102,14 +97,10 @@
     margin-bottom: 40px;
   }
 
-  .ContactLink:hover {
-    transform: none;
-  }
-
   .LinkHoverIcon3 {
     display: none;
   }
-  
+
   .LinkHoverIcon3Small {
     display: none;
   }

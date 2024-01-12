@@ -1,24 +1,24 @@
 export const INTRO =
-  "hi! i'm kelsey. i'm a software engineer in the bay area. \n\nnice to meet you! ✌️";
+  "Hi! I'm Kelsey. I'm a software engineer by training and a creative at heart. I'm usually in the Bay Area, but right now I'm in Japan.\n\nNice to meet you! ✌️";
 
-export const ABOUT_PRESENT = (
-  <div>
-    {`I currently live in San Francisco and am a software engineer at `}
-    <a
-      href="https://www.parafin.com/"
-      className="AboutContentLink"
-      target="_blank"
-      rel="noreferrer"
-    >
-      Parafin
-    </a>
-    {`. We're a small team building financial tools to grow small businesses, and I'm learning something new every day.\n\nIn my free time, you'll find me thrift shopping, playing tennis or guitar, snowboarding, or obsessing over Trader Joe's snacks.`}
-  </div>
-);
+  export const ABOUT_PRESENT = (
+    <div>
+      {`You've caught me in my Year of Making Things! I'm basically working on a bunch of projects and bringing fun ideas to life. My first project was `}
+      <a
+        href="https://www.doodlecook.com/"
+        className="AboutContentLink"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Doodlecook
+      </a>
+      {`, a vaguely poultry-themed site for sharing recipes.\n\nI'll be tinkering on a quite a few more things before the end of my Year and am super excited for the learning ahead!\n\nIn my free time, you'll find me writing low quality fiction, thrift shopping, snowboarding, or obsessing over Trader Joe's snacks.`}
+    </div>
+  );
 
 export const ABOUT_PAST = (
   <div>
-    {`I was a founding engineer at `}
+    {`I was an early engineer at `}
     <a
       href="https://www.akasa.com/"
       className="AboutContentLink"
@@ -27,7 +27,16 @@ export const ABOUT_PAST = (
     >
       AKASA
     </a>
-    {`, building systems to automate the messy financial side of healthcare.\n\nBefore that, I got my B.S. in Mathematical + Computational Science and a minor in Creative Writing from Stanford. I also worked on some fun projects ➡️.`}
+    {` and `}
+    <a
+      href="https://www.parafin.com/"
+      className="AboutContentLink"
+      target="_blank"
+      rel="noreferrer"
+    >
+      Parafin
+    </a>
+    {`. I got to work with some incredible people and learned about the American healthcare revenue cycle (it's messy) and how to support small businesses (it's money).\n\nBefore that, I got my B.S. in Mathematical + Computational Science and a minor in Creative Writing from Stanford. I also worked on some fun projects ➡️.`}
   </div>
 );
 
@@ -78,7 +87,7 @@ export const ABOUT_TEC = (
 
 export const ABOUT_OTHER = (
   <div>
-    {`I've built a lot more janky things in the past! Some highlights:\n\n - `}
+    {`I've built a lot more janky things in the past! Don't look too closely or you'll be burned. Some highlights:\n\n - `}
     <a
       href="https://themakermode.com/"
       className="AboutContentLink"
@@ -120,6 +129,6 @@ export const ABOUT_OTHER = (
 
 export const ABOUT_FUTURE = (
   <div>
-    {`I hope to keep building cool things and one day get over my lactose intolerance.`}
+    {`I've gained an immense appreciation of the art of Turning Nothing Into Something, and I hope to continue doing that, wherever I am.\n\nIn addition, I hope to one day get over my lactose intolerance.`}
   </div>
 );
