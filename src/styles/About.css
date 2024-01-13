@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Miniver&family=Source+Sans+Pro:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Miniver&family=Source+Sans+Pro:wght@300;400&display=swap");
 
 .AboutLayout {
   position: relative;
@@ -34,10 +34,10 @@
   align-items: center;
   background-color: #f7f6f5;
   opacity: 1;
-	animation-name: fadeInOpacitySlow;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in;
-	animation-duration: 1s;
+  animation-name: fadeInOpacitySlow;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 1s;
 }
 
 .AboutArrowSectionBottom {
@@ -49,10 +49,10 @@
   align-items: center;
   background-color: #f7f6f5;
   opacity: 1;
-	animation-name: fadeInOpacitySlow;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in;
-	animation-duration: 1s;
+  animation-name: fadeInOpacitySlow;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 1s;
 }
 
 .AboutArrowSectionLeft {
@@ -64,10 +64,10 @@
   align-items: center;
   background-color: #f7f6f5;
   opacity: 1;
-	animation-name: fadeInOpacitySlow;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in;
-	animation-duration: 1s;
+  animation-name: fadeInOpacitySlow;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 1s;
 }
 
 .AboutArrowSectionRight {
@@ -79,19 +79,19 @@
   align-items: center;
   background-color: #f7f6f5;
   opacity: 1;
-	animation-name: fadeInOpacitySlow;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in;
-	animation-duration: 1s;
+  animation-name: fadeInOpacitySlow;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 1s;
 }
 
 @keyframes fadeInOpacitySlow {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .UpArrow {
@@ -134,7 +134,7 @@
 }
 
 .AboutHeaderText {
-  font-family: 'Miniver', sans-serif;
+  font-family: "Miniver", sans-serif;
   font-size: 40px;
   text-align: center;
   max-width: 180px;
@@ -152,7 +152,7 @@
 }
 
 .AboutContentLink {
-  color: #7351FA;
+  color: #7351fa;
   z-index: 3;
 }
 
@@ -161,139 +161,139 @@
 }
 
 .SlideUp {
-	animation-name: slideUp;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in;
-	animation-duration: .5s;
+  animation-name: slideUp;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.5s;
 }
 
 @keyframes slideUp {
-	0% {
+  0% {
     transform: translateY(100%);
     opacity: 0;
-	}
-	100% {
+  }
+  100% {
     transform: translateY(0);
     opacity: 1;
-	}
+  }
 }
 
 .SlideUpOut {
   opacity: 1;
-  animation: slideUpOut .5s ease-in;
+  animation: slideUpOut 0.5s ease-in;
 }
 
 @keyframes slideUpOut {
-	0% {
+  0% {
     transform: translateY(0);
     opacity: 1;
-	}
-	100% {
+  }
+  100% {
     transform: translateY(-100%);
     opacity: 0;
-	}
+  }
 }
 
 .SlideDown {
-	animation-name: slideDown;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in;
-	animation-duration: .5s;
+  animation-name: slideDown;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.5s;
 }
 
 @keyframes slideDown {
-	0% {
+  0% {
     transform: translateY(-100%);
     opacity: 0;
-	}
-	100% {
+  }
+  100% {
     transform: translateY(0);
     opacity: 1;
-	}
+  }
 }
 
 .SlideDownOut {
   opacity: 1;
-  animation: slideDownOut .5s ease-in;
+  animation: slideDownOut 0.5s ease-in;
 }
 
 @keyframes slideDownOut {
-	0% {
+  0% {
     transform: translateY(0);
     opacity: 1;
-	}
-	100% {
+  }
+  100% {
     transform: translateY(100%);
     opacity: 0;
-	}
+  }
 }
 
 .SlideRight {
-	animation-name: slideRight;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in;
-	animation-duration: .5s;
+  animation-name: slideRight;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.5s;
 }
 
 @keyframes slideRight {
-	0% {
+  0% {
     transform: translateX(-100%);
     opacity: 0;
-	}
-	100% {
+  }
+  100% {
     transform: translateX(0);
     opacity: 1;
-	}
+  }
 }
 
 .SlideRightOut {
   opacity: 1;
-  animation: slideRightOut .5s ease-in;
+  animation: slideRightOut 0.5s ease-in;
 }
 
 @keyframes slideRightOut {
-	0% {
+  0% {
     transform: translateX(0);
     opacity: 1;
-	}
-	100% {
+  }
+  100% {
     transform: translateX(100%);
     opacity: 0;
-	}
+  }
 }
 
 .SlideLeft {
-	animation-name: slideLeft;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in;
-	animation-duration: .5s;
+  animation-name: slideLeft;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.5s;
 }
 
 @keyframes slideLeft {
-	0% {
+  0% {
     transform: translateX(100%);
     opacity: 0;
-	}
-	100% {
+  }
+  100% {
     transform: translateX(0);
     opacity: 1;
-	}
+  }
 }
 
 .SlideLeftOut {
   opacity: 1;
-  animation: slideLeftOut .5s ease-in;
+  animation: slideLeftOut 0.5s ease-in;
 }
 
 @keyframes slideLeftOut {
-	0% {
+  0% {
     transform: translateX(0);
     opacity: 1;
-	}
-	100% {
+  }
+  100% {
     transform: translateX(-100%);
     opacity: 0;
-	}
+  }
 }
 
 @media screen and (max-width: 800px) and (min-width: 600px) {
@@ -305,17 +305,16 @@
     font-size: 16px;
   }
 
-
   .DownArrow {
     height: 18px;
     margin-bottom: 5px;
   }
-  
+
   .LeftArrow {
     height: 18px;
     margin-left: 20px;
   }
-  
+
   .RightArrow {
     height: 18px;
     margin-right: 20px;
@@ -323,7 +322,7 @@
 
   .UpArrow {
     height: 18px;
-  }  
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -335,14 +334,14 @@
     align-items: center;
     margin: 0px;
   }
-  
+
   .AboutHeaderText {
     font-size: 30px;
     margin-left: 30px;
     margin-right: 30px;
     max-width: 80%;
   }
-  
+
   .AboutContent {
     height: 50%;
     width: 100%;
@@ -353,7 +352,7 @@
     text-align: left;
     margin: 0px;
   }
-  
+
   .AboutContentText {
     margin: 0px 60px 0px 70px;
     font-size: 16px;
@@ -363,12 +362,12 @@
     height: 18px;
     margin-bottom: 5px;
   }
-  
+
   .LeftArrow {
     height: 18px;
     margin-left: 20px;
   }
-  
+
   .RightArrow {
     height: 18px;
     margin-right: 20px;
@@ -376,5 +375,11 @@
 
   .UpArrow {
     height: 18px;
-  }  
+  }
+}
+
+@media screen and (max-width: 400px) and (max-height: 800px) {
+  .AboutContentText {
+    font-size: 13px;
+  }
 }
