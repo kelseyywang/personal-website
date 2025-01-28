@@ -4,9 +4,8 @@ import {
   ABOUT_PAST,
   ABOUT_PRESENT,
   ABOUT_FTF,
-  ABOUT_HACKATHONS,
   ABOUT_TEC,
-  ABOUT_OTHER,
+  ABOUT_PROJECTS,
 } from "./content.jsx";
 import DoublePanel from "./DoublePanel";
 
@@ -42,8 +41,8 @@ export const proj1 = (
 
 export const proj2 = (
   <DoublePanel
-    panel1={headerText("hackathons:")}
-    panel2={contentText(ABOUT_HACKATHONS)}
+    panel1={headerText("projects:")}
+    panel2={contentText(ABOUT_PROJECTS)}
   />
 );
 
@@ -51,13 +50,6 @@ export const proj3 = (
   <DoublePanel
     panel1={headerText("teens exploring code:")}
     panel2={contentText(ABOUT_TEC)}
-  />
-);
-
-export const proj4 = (
-  <DoublePanel
-    panel1={headerText("other:")}
-    panel2={contentText(ABOUT_OTHER)}
   />
 );
 

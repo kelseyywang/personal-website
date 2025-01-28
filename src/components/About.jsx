@@ -7,13 +7,12 @@ import {
   proj1,
   proj2,
   proj3,
-  proj4,
 } from "./AboutContent";
 import arrowImage from "../images/down_arrow.png";
 import { useEffect, useRef, useState } from "react";
 import classNames from "classnames";
 
-const PAGES = [[present], [past, proj1, proj2, proj3, proj4], [future]];
+const PAGES = [[present], [past, proj1, proj2, proj3], [future]];
 
 function About() {
   // Primary index is the vertical index (up/down) and secondary is horizontal index (left/right)

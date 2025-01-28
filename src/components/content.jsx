@@ -1,18 +1,26 @@
 export const INTRO =
-  "Hi! I'm Kelsey. I'm a software engineer by training and a creative at heart. I'm usually in the Bay Area, but right now I'm in Japan.\n\nNice to meet you! ✌️";
+  "Hi! I'm Kelsey. I'm a software engineer by training and a creative at heart. I'm currently located in San Francisco.\n\nNice to meet you! ✌️";
 
   export const ABOUT_PRESENT = (
     <div>
-      {`You've caught me in my Year of Making Things! I'm basically working on a bunch of projects and bringing fun ideas to life. My first project was `}
+      {`I just finished my Year of Making Things, which you can read about `}
       <a
-        href="https://www.doodlecook.com/"
+        href="https://open.substack.com/pub/kelseyywang/p/my-gap-filling-year"
         className="AboutContentLink"
         target="_blank"
         rel="noreferrer"
       >
-        Doodlecook
+        here
       </a>
-      {`, a vaguely poultry-themed site for sharing recipes.\n\nI'll be tinkering on a quite a few more things before the end of my Year and am super excited for the learning ahead!\n\nIn my free time, you'll find me writing low quality fiction, thrift shopping, snowboarding, or obsessing over Trader Joe's snacks.`}
+      {`! It was the coolest year of my life so far and if you're thinking of doing something similar, let's chat :)\n\nI now run `}
+      <a
+        href="https://www.essay.cafe/"
+        className="AboutContentLink"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Essay Cafe
+      </a>{` full-time, which means I do a lot of different things: helping students, writing code, making TikToks, planning growth strategy, managing operations, etc.\n\nIn my free time, you'll find me journaling, playing tennis, hunting for cool furniture, or obsessing over Trader Joe's snacks.`}
     </div>
   );
 
@@ -55,9 +63,9 @@ export const ABOUT_FTF = (
   </div>
 );
 
-export const ABOUT_HACKATHONS = (
+export const ABOUT_PROJECTS = (
   <div>
-    {`I participated in quite a few hackathons in college and made some unforgettable memories with friends. You can find some of the projects `}
+    {`In college, hackathons showed me the thrill of building things from scratch. You can find some of my old projects `}
     <a
       href="https://devpost.com/kelseyywang"
       className="AboutContentLink"
@@ -66,7 +74,34 @@ export const ABOUT_HACKATHONS = (
     >
       here
     </a>
-    {`.`}
+    {`. I've also hacked on other fun ideas, like:\n\n - `}
+    <a
+      href="https://www.doodlecook.com"
+      className="AboutContentLink"
+      target="_blank"
+      rel="noreferrer"
+    >
+      Doodlecook
+    </a>
+    {`, a vaguely poultry-themed recipe website\n - `}
+    <a
+      href="https://www.youtube.com/watch?v=6cpdgtT3bfM"
+      className="AboutContentLink"
+      target="_blank"
+      rel="noreferrer"
+    >
+      PillPal
+    </a>
+    {`, a customizable pill dispenser written from bare metal in C\n - `}
+    <a
+      href="https://www.youtube.com/watch?v=Ow-PV4i-x7A"
+      className="AboutContentLink"
+      target="_blank"
+      rel="noreferrer"
+    >
+      heis
+    </a>
+    {`, a realtime, location-tracking tag-like game made with React Native`}
   </div>
 );
 
@@ -81,49 +116,7 @@ export const ABOUT_TEC = (
     >
       Teens Exploring Code (TEC)
     </a>
-    {`, an organization hosting free educational hackathons for teens to learn about computer science. It was so exciting to build a team from scratch, scrape together resources, and then execute on a wild idea.`}
-  </div>
-);
-
-export const ABOUT_OTHER = (
-  <div>
-    {`I've built a lot more janky things in the past! Don't look too closely or you'll be burned. Some highlights:\n\n - `}
-    <a
-      href="https://themakermode.com/"
-      className="AboutContentLink"
-      target="_blank"
-      rel="noreferrer"
-    >
-      The Maker Mode
-    </a>
-    {`, an educational blog site built in pure JS\n - `}
-    <a
-      href="https://www.youtube.com/watch?v=6cpdgtT3bfM"
-      className="AboutContentLink"
-      target="_blank"
-      rel="noreferrer"
-    >
-      PillPal
-    </a>
-    {`, a customizable pill dispenser written from bare metal in C\n - `}
-    <a
-      href="https://github.com/kelseyywang/heis_v1"
-      className="AboutContentLink"
-      target="_blank"
-      rel="noreferrer"
-    >
-      heis
-    </a>
-    {`, a realtime, location-tracking `}
-    <a
-      href="https://www.youtube.com/watch?v=Ow-PV4i-x7A"
-      className="AboutContentLink"
-      target="_blank"
-      rel="noreferrer"
-    >
-      tag-like game
-    </a>
-    {` made with React Native`}
+    {`, an organization hosting free educational hackathons for teens to learn about computer science. It was so exciting to build a team, scrape together resources, and then execute on a wild idea.`}
   </div>
 );
 

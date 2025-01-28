@@ -48,6 +48,14 @@ function Right() {
       >
         contact
       </a>
+      <a
+        href="https://substack.com/@kelseyywang"
+        className="ContactLink"
+        target="_blank"
+        rel="noreferrer"
+      >
+        substack
+      </a>
     </div>
   );
 }
