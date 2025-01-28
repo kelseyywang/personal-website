@@ -41,20 +41,20 @@ function Right() {
         medium
       </a>
       <a
-        href="https://forms.gle/WQcwuCbKXWibQmnw9"
-        className="ContactLink"
-        target="_blank"
-        rel="noreferrer"
-      >
-        contact
-      </a>
-      <a
         href="https://substack.com/@kelseyywang"
         className="ContactLink"
         target="_blank"
         rel="noreferrer"
       >
         substack
+      </a>
+      <a
+        href="https://forms.gle/WQcwuCbKXWibQmnw9"
+        className="ContactLink"
+        target="_blank"
+        rel="noreferrer"
+      >
+        contact
       </a>
     </div>
   );
